@@ -30,3 +30,5 @@ In public, we often need to look at time, which requires a precise digital clock
 5、设计一个10个数的倒计时，闪烁显示，闪烁频率2HZ
 
 6、用LCD液晶屏来显示当前时间。
+
+![image](https://github.com/yangtiming/Digital-circuit-course-design/blob/master/images/liuchengtu2.jpg)
