@@ -8,7 +8,7 @@ In public, we often need to look at time, which requires a precise digital clock
 
 ## video
 you can watch a video about it from:
-[youtube-video](https://youtu.be/3SdaLhA8cqA )
+### [youtube-video](https://youtu.be/3SdaLhA8cqA )
 
 ![image](https://github.com/yangtiming/Digital-circuit-course-design/blob/master/images/board.JPG)
 
