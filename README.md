@@ -7,7 +7,9 @@ Digital circuit course design
 In public, we often need to look at time, which requires a precise digital clock to serve us, digital clock is a kind of when using a digital circuit technology, minutes and seconds timing device, has higher accuracy compared with the mechanical clock and intuitive, and no mechanical device, has a longer service life, therefore has been widely used. This digital clock is made by Verilog language. There's the basic clock function, there's the alarm clock, the flashing 10 second countdown, the hourly broadcast, THE LCD display, etc
 
 ## video
+you can watch a video about it from:
 [youtube-video](https://youtu.be/3SdaLhA8cqA )
+
 ![image](https://github.com/yangtiming/Digital-circuit-course-design/blob/master/images/board.JPG)
 
 
