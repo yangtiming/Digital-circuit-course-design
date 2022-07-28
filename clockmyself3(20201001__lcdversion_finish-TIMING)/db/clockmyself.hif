@@ -1,0 +1,83 @@
+Version 6.0 Build 178 04/27/2006 SJ Web Edition
+11
+767
+OFF
+OFF
+OFF
+OFF
+OFF
+FV_OFF
+Level2
+0
+0
+VRSM_ON
+VHSM_ON
+0
+-- Start Partition --
+-- End Partition --
+-- Start Library Paths --
+-- End Library Paths --
+-- Start VHDL Libraries --
+-- End VHDL Libraries --
+# entity
+clockmyself
+# storage
+db|clockmyself.(0).cnf
+db|clockmyself.(0).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+clockmyself.v
+9f13b819489eb683e078987dfd8f41c9
+7
+# internal_option {
+AUTO_RESOURCE_SHARING
+OFF
+}
+# user_parameter {
+n
+49999999
+PARAMETER_DEC
+DEF
+m
+24999999
+PARAMETER_DEC
+DEF
+Clear_Lcd
+0000
+PARAMETER_BIN
+DEF
+Set_Disp_Mode
+0001
+PARAMETER_BIN
+DEF
+Disp_On
+0010
+PARAMETER_BIN
+DEF
+Shift_Down
+0011
+PARAMETER_BIN
+DEF
+Write_Addr
+0100
+PARAMETER_BIN
+DEF
+Write_Data_First
+0101
+PARAMETER_BIN
+DEF
+Write_Data_Second
+0110
+PARAMETER_BIN
+DEF
+}
+# hierarchies {
+|
+}
+# end
+# complete
+

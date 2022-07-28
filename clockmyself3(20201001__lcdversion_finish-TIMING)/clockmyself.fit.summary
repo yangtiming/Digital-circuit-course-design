@@ -1,0 +1,14 @@
+Fitter Status : Successful - Thu Oct 01 16:05:17 2020
+Quartus II Version : 6.0 Build 178 04/27/2006 SJ Web Edition
+Revision Name : clockmyself
+Top-level Entity Name : clockmyself
+Family : Cyclone II
+Device : EP2C35F672C6
+Timing Models : Final
+Total logic elements : 702 / 33,216 ( 2 % )
+Total registers : 294
+Total pins : 73 / 475 ( 15 % )
+Total virtual pins : 0
+Total memory bits : 0 / 483,840 ( 0 % )
+Embedded Multiplier 9-bit elements : 0 / 70 ( 0 % )
+Total PLLs : 0 / 4 ( 0 % )

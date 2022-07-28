@@ -1,0 +1,550 @@
+Analysis & Synthesis report for clockmyself
+Thu Oct 01 16:05:11 2020
+Version 6.0 Build 178 04/27/2006 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Analysis & Synthesis Source Files Read
+  5. Analysis & Synthesis Resource Usage Summary
+  6. Analysis & Synthesis Resource Utilization by Entity
+  7. State Machine - |clockmyself|state
+  8. User-Specified and Inferred Latches
+  9. General Register Statistics
+ 10. Inverted Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for User Entity Instance: Top-level Entity: |clockmyself
+ 13. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2006 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                 ;
++------------------------------------+-----------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Thu Oct 01 16:05:11 2020   ;
+; Quartus II Version                 ; 6.0 Build 178 04/27/2006 SJ Web Edition ;
+; Revision Name                      ; clockmyself                             ;
+; Top-level Entity Name              ; clockmyself                             ;
+; Family                             ; Cyclone II                              ;
+; Total logic elements               ; 696                                     ;
+; Total registers                    ; 294                                     ;
+; Total pins                         ; 73                                      ;
+; Total virtual pins                 ; 0                                       ;
+; Total memory bits                  ; 0                                       ;
+; Embedded Multiplier 9-bit elements ; 0                                       ;
+; Total PLLs                         ; 0                                       ;
++------------------------------------+-----------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                ;
++--------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                             ; Setting            ; Default Value      ;
++--------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                             ; EP2C35F672C6       ;                    ;
+; Top-level entity name                                              ; clockmyself        ; clockmyself        ;
+; Family name                                                        ; Cyclone II         ; Stratix            ;
+; Use smart compilation                                              ; Off                ; Off                ;
+; Restructure Multiplexers                                           ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                ; Off                ; Off                ;
+; Preserve fewer node names                                          ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                          ; Off                ; Off                ;
+; Verilog Version                                                    ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                       ; VHDL93             ; VHDL93             ;
+; State Machine Processing                                           ; Auto               ; Auto               ;
+; Extract Verilog State Machines                                     ; On                 ; On                 ;
+; Extract VHDL State Machines                                        ; On                 ; On                 ;
+; Add Pass-Through Logic to Inferred RAMs                            ; On                 ; On                 ;
+; DSP Block Balancing                                                ; Auto               ; Auto               ;
+; Maximum DSP Block Usage                                            ; Unlimited          ; Unlimited          ;
+; NOT Gate Push-Back                                                 ; On                 ; On                 ;
+; Power-Up Don't Care                                                ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                       ; Off                ; Off                ;
+; Remove Duplicate Registers                                         ; On                 ; On                 ;
+; Ignore CARRY Buffers                                               ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                             ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                              ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                          ; Off                ; Off                ;
+; Ignore LCELL Buffers                                               ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                     ; Off                ; Off                ;
+; Optimization Technique -- Cyclone II                               ; Balanced           ; Balanced           ;
+; Carry Chain Length -- Stratix/Stratix GX/Cyclone/MAX II/Cyclone II ; 70                 ; 70                 ;
+; Auto Carry Chains                                                  ; On                 ; On                 ;
+; Auto Open-Drain Pins                                               ; On                 ; On                 ;
+; Remove Duplicate Logic                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                              ; Off                ; Off                ;
+; Perform gate-level register retiming                               ; Off                ; Off                ;
+; Allow register retiming to trade off Tsu/Tco with Fmax             ; On                 ; On                 ;
+; Auto ROM Replacement                                               ; On                 ; On                 ;
+; Auto RAM Replacement                                               ; On                 ; On                 ;
+; Auto Shift Register Replacement                                    ; On                 ; On                 ;
+; Auto Clock Enable Replacement                                      ; On                 ; On                 ;
+; Allow Synchronous Control Signals                                  ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                             ; Off                ; Off                ;
+; Auto Resource Sharing                                              ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                 ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                 ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                      ; Off                ; Off                ;
+; Maximum Number of M4K Memory Blocks                                ; Unlimited          ; Unlimited          ;
+; Ignore translate_off and translate_on Synthesis Directives         ; Off                ; Off                ;
+; Show Parameter Settings Tables in Synthesis Report                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                 ; Off                ; Off                ;
+; Retiming Meta-Stability Register Sequence Length                   ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                       ; Normal compilation ; Normal compilation ;
+; HDL message level                                                  ; Level2             ; Level2             ;
++--------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                             ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                                         ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------------------------------------------------------+
+; clockmyself.v                    ; yes             ; User Verilog HDL File  ; C:/Documents and Settings/Administrator/×ÀÃæ/clockmyself3(20201001__lcdversion_finish)/clockmyself.v ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary           ;
++---------------------------------------------+---------+
+; Resource                                    ; Usage   ;
++---------------------------------------------+---------+
+; Estimated Total logic elements              ; 696     ;
+; Total combinational functions               ; 696     ;
+; Logic element usage by number of LUT inputs ;         ;
+;     -- 4 input functions                    ; 364     ;
+;     -- 3 input functions                    ; 141     ;
+;     -- <=2 input functions                  ; 191     ;
+;         -- Combinational cells for routing  ; 0       ;
+; Logic elements by mode                      ;         ;
+;     -- normal mode                          ; 591     ;
+;     -- arithmetic mode                      ; 105     ;
+; Total registers                             ; 294     ;
+; I/O pins                                    ; 73      ;
+; Maximum fan-out node                        ; clk_2ms ;
+; Maximum fan-out                             ; 122     ;
+; Total fan-out                               ; 3107    ;
+; Average fan-out                             ; 2.92    ;
++---------------------------------------------+---------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                 ;
++----------------------------+-------------------+--------------+-------------+------+--------------+---------+-----------+------+--------------+---------------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; M4Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ;
++----------------------------+-------------------+--------------+-------------+------+--------------+---------+-----------+------+--------------+---------------------+
+; |clockmyself               ; 696 (696)         ; 294 (294)    ; 0           ; 0    ; 0            ; 0       ; 0         ; 73   ; 0            ; |clockmyself        ;
++----------------------------+-------------------+--------------+-------------+------+--------------+---------+-----------+------+--------------+---------------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |clockmyself|state                                                                                                                                       ;
++-------------------------+-------------------------+---------------------+---------------+------------------+------------------+------------------------+-----------------+
+; Name                    ; state.Write_Data_Second ; state.Set_Disp_Mode ; state.Disp_On ; state.Shift_Down ; state.Write_Addr ; state.Write_Data_First ; state.Clear_Lcd ;
++-------------------------+-------------------------+---------------------+---------------+------------------+------------------+------------------------+-----------------+
+; state.Clear_Lcd         ; 0                       ; 0                   ; 0             ; 0                ; 0                ; 0                      ; 0               ;
+; state.Write_Data_First  ; 0                       ; 0                   ; 0             ; 0                ; 0                ; 1                      ; 1               ;
+; state.Write_Addr        ; 0                       ; 0                   ; 0             ; 0                ; 1                ; 0                      ; 1               ;
+; state.Shift_Down        ; 0                       ; 0                   ; 0             ; 1                ; 0                ; 0                      ; 1               ;
+; state.Disp_On           ; 0                       ; 0                   ; 1             ; 0                ; 0                ; 0                      ; 1               ;
+; state.Set_Disp_Mode     ; 0                       ; 1                   ; 0             ; 0                ; 0                ; 0                      ; 1               ;
+; state.Write_Data_Second ; 1                       ; 0                   ; 0             ; 0                ; 0                ; 0                      ; 1               ;
++-------------------------+-------------------------+---------------------+---------------+------------------+------------------+------------------------+-----------------+
+
+
++----------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                ;
++-----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal ; Free of Timing Hazards ;
++-----------------------------------------------------+---------------------+------------------------+
+; blink$latch                                         ; always5~1           ; yes                    ;
+; minH[0]                                             ; always4~0           ; yes                    ;
+; minH[1]                                             ; always4~0           ; yes                    ;
+; minH[2]                                             ; always4~0           ; yes                    ;
+; minH[3]                                             ; always4~0           ; yes                    ;
+; minL[0]                                             ; always4~0           ; yes                    ;
+; minL[1]                                             ; always4~0           ; yes                    ;
+; minL[2]                                             ; always4~0           ; yes                    ;
+; minL[3]                                             ; always4~0           ; yes                    ;
+; hourL[0]                                            ; always4~0           ; yes                    ;
+; hourL[1]                                            ; always4~0           ; yes                    ;
+; hourL[2]                                            ; always4~0           ; yes                    ;
+; hourL[3]                                            ; always4~0           ; yes                    ;
+; hourH[0]                                            ; always4~0           ; yes                    ;
+; hourH[1]                                            ; always4~0           ; yes                    ;
+; hourH[2]                                            ; always4~0           ; yes                    ;
+; hourH[3]                                            ; always4~0           ; yes                    ;
+; secL[0]                                             ; always4~0           ; yes                    ;
+; secL[1]                                             ; always4~0           ; yes                    ;
+; secL[2]                                             ; always4~0           ; yes                    ;
+; secL[3]                                             ; always4~0           ; yes                    ;
+; secH[0]                                             ; always4~0           ; yes                    ;
+; secH[1]                                             ; always4~0           ; yes                    ;
+; secH[2]                                             ; always4~0           ; yes                    ;
+; secH[3]                                             ; always4~0           ; yes                    ;
+; Number of user-specified and inferred latches = 25  ;                     ;                        ;
++-----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 294   ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 28    ;
+; Number of registers using Asynchronous Clear ; 27    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 127   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; RS~reg0                                ; 2       ;
+; Total number of inverted registers = 1 ;         ;
++----------------------------------------+---------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------+
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |clockmyself|disp_count[1]  ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |clockmyself|alarm_minL[3]  ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |clockmyself|alarm_secL[3]  ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |clockmyself|minL_2[0]      ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |clockmyself|secL_2[1]      ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |clockmyself|alarm_hourL[3] ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |clockmyself|alarm_minH[0]  ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |clockmyself|alarm_secH[0]  ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |clockmyself|hourL_2[3]     ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |clockmyself|minH_2[3]      ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |clockmyself|secH_2[1]      ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |clockmyself|secL_1[0]      ;
+; 5:1                ; 6 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; Yes        ; |clockmyself|Data_Buf[20]   ;
+; 6:1                ; 4 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |clockmyself|alarm_hourH[3] ;
+; 6:1                ; 4 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |clockmyself|hourH_2[3]     ;
+; 6:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |clockmyself|secH_1[3]      ;
+; 6:1                ; 75 bits   ; 300 LEs       ; 150 LEs              ; 150 LEs                ; Yes        ; |clockmyself|Data_Buf[45]   ;
+; 6:1                ; 24 bits   ; 96 LEs        ; 48 LEs               ; 48 LEs                 ; Yes        ; |clockmyself|Data_Buf[82]   ;
+; 7:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |clockmyself|minL_1[1]      ;
+; 8:1                ; 4 bits    ; 20 LEs        ; 8 LEs                ; 12 LEs                 ; Yes        ; |clockmyself|hourH_1[2]     ;
+; 8:1                ; 4 bits    ; 20 LEs        ; 8 LEs                ; 12 LEs                 ; Yes        ; |clockmyself|minH_1[2]      ;
+; 9:1                ; 4 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; Yes        ; |clockmyself|hourL_1[3]     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------+
+
+
++-----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |clockmyself ;
++-------------------+----------+----------------------------------------------+
+; Parameter Name    ; Value    ; Type                                         ;
++-------------------+----------+----------------------------------------------+
+; n                 ; 49999999 ; Integer                                      ;
+; m                 ; 24999999 ; Integer                                      ;
+; Clear_Lcd         ; 0000     ; Binary                                       ;
+; Set_Disp_Mode     ; 0001     ; Binary                                       ;
+; Disp_On           ; 0010     ; Binary                                       ;
+; Shift_Down        ; 0011     ; Binary                                       ;
+; Write_Addr        ; 0100     ; Binary                                       ;
+; Write_Data_First  ; 0101     ; Binary                                       ;
+; Write_Data_Second ; 0110     ; Binary                                       ;
++-------------------+----------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 6.0 Build 178 04/27/2006 SJ Web Edition
+    Info: Processing started: Thu Oct 01 16:05:09 2020
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off clockmyself -c clockmyself
+Info: Found 1 design units, including 1 entities, in source file clockmyself.v
+    Info: Found entity 1: clockmyself
+Info: Elaborating entity "clockmyself" for the top level hierarchy
+Warning (10230): Verilog HDL assignment warning at clockmyself.v(58): truncated value with size 32 to match size of target (31)
+Warning (10230): Verilog HDL assignment warning at clockmyself.v(110): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at clockmyself.v(113): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at clockmyself.v(116): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at clockmyself.v(119): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at clockmyself.v(122): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at clockmyself.v(125): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at clockmyself.v(151): truncated value with size 32 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at clockmyself.v(193): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at clockmyself.v(196): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at clockmyself.v(208): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at clockmyself.v(211): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at clockmyself.v(229): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at clockmyself.v(232): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at clockmyself.v(265): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at clockmyself.v(268): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at clockmyself.v(279): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at clockmyself.v(282): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at clockmyself.v(300): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at clockmyself.v(303): truncated value with size 32 to match size of target (4)
+Warning (10235): Verilog HDL Always Construct warning at clockmyself.v(325): variable "set_mod" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at clockmyself.v(336): variable "set_mod" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at clockmyself.v(336): variable "set_alarm" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10240): Verilog HDL Always Construct warning at clockmyself.v(322): inferring latch(es) for variable "secL", which holds its previous value in one or more paths through the always construct
+Info (10041): Verilog HDL or VHDL info at clockmyself.v(325): inferred latch for "secL[3]"
+Info (10041): Verilog HDL or VHDL info at clockmyself.v(325): inferred latch for "secL[2]"
+Info (10041): Verilog HDL or VHDL info at clockmyself.v(325): inferred latch for "secL[1]"
+Info (10041): Verilog HDL or VHDL info at clockmyself.v(325): inferred latch for "secL[0]"
+Warning (10240): Verilog HDL Always Construct warning at clockmyself.v(322): inferring latch(es) for variable "secH", which holds its previous value in one or more paths through the always construct
+Info (10041): Verilog HDL or VHDL info at clockmyself.v(325): inferred latch for "secH[3]"
+Info (10041): Verilog HDL or VHDL info at clockmyself.v(325): inferred latch for "secH[2]"
+Info (10041): Verilog HDL or VHDL info at clockmyself.v(325): inferred latch for "secH[1]"
+Info (10041): Verilog HDL or VHDL info at clockmyself.v(325): inferred latch for "secH[0]"
+Warning (10240): Verilog HDL Always Construct warning at clockmyself.v(322): inferring latch(es) for variable "minL", which holds its previous value in one or more paths through the always construct
+Info (10041): Verilog HDL or VHDL info at clockmyself.v(325): inferred latch for "minL[3]"
+Info (10041): Verilog HDL or VHDL info at clockmyself.v(325): inferred latch for "minL[2]"
+Info (10041): Verilog HDL or VHDL info at clockmyself.v(325): inferred latch for "minL[1]"
+Info (10041): Verilog HDL or VHDL info at clockmyself.v(325): inferred latch for "minL[0]"
+Warning (10240): Verilog HDL Always Construct warning at clockmyself.v(322): inferring latch(es) for variable "minH", which holds its previous value in one or more paths through the always construct
+Info (10041): Verilog HDL or VHDL info at clockmyself.v(325): inferred latch for "minH[3]"
+Info (10041): Verilog HDL or VHDL info at clockmyself.v(325): inferred latch for "minH[2]"
+Info (10041): Verilog HDL or VHDL info at clockmyself.v(325): inferred latch for "minH[1]"
+Info (10041): Verilog HDL or VHDL info at clockmyself.v(325): inferred latch for "minH[0]"
+Warning (10240): Verilog HDL Always Construct warning at clockmyself.v(322): inferring latch(es) for variable "hourL", which holds its previous value in one or more paths through the always construct
+Info (10041): Verilog HDL or VHDL info at clockmyself.v(325): inferred latch for "hourL[3]"
+Info (10041): Verilog HDL or VHDL info at clockmyself.v(325): inferred latch for "hourL[2]"
+Info (10041): Verilog HDL or VHDL info at clockmyself.v(325): inferred latch for "hourL[1]"
+Info (10041): Verilog HDL or VHDL info at clockmyself.v(325): inferred latch for "hourL[0]"
+Warning (10240): Verilog HDL Always Construct warning at clockmyself.v(322): inferring latch(es) for variable "hourH", which holds its previous value in one or more paths through the always construct
+Info (10041): Verilog HDL or VHDL info at clockmyself.v(325): inferred latch for "hourH[3]"
+Info (10041): Verilog HDL or VHDL info at clockmyself.v(325): inferred latch for "hourH[2]"
+Info (10041): Verilog HDL or VHDL info at clockmyself.v(325): inferred latch for "hourH[1]"
+Info (10041): Verilog HDL or VHDL info at clockmyself.v(325): inferred latch for "hourH[0]"
+Warning (10235): Verilog HDL Always Construct warning at clockmyself.v(353): variable "minH" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at clockmyself.v(353): variable "minL" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at clockmyself.v(353): variable "secH" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at clockmyself.v(357): variable "blink" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10240): Verilog HDL Always Construct warning at clockmyself.v(351): inferring latch(es) for variable "blink", which holds its previous value in one or more paths through the always construct
+Info (10041): Verilog HDL or VHDL info at clockmyself.v(353): inferred latch for "blink"
+Warning (10230): Verilog HDL assignment warning at clockmyself.v(408): truncated value with size 32 to match size of target (5)
+Info (10264): Verilog HDL Case Statement information at clockmyself.v(438): all case item expressions in this case statement are onehot
+Warning (10235): Verilog HDL Always Construct warning at clockmyself.v(466): variable "minL" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at clockmyself.v(466): variable "alarm_minL" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at clockmyself.v(466): variable "minH" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at clockmyself.v(466): variable "alarm_minH" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at clockmyself.v(466): variable "hourL" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at clockmyself.v(466): variable "alarm_hourL" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at clockmyself.v(466): variable "hourH" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at clockmyself.v(466): variable "alarm_hourH" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at clockmyself.v(474): variable "set_alarm" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at clockmyself.v(490): variable "set_alarm" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10240): Verilog HDL Always Construct warning at clockmyself.v(472): inferring latch(es) for variable "qout_1", which holds its previous value in one or more paths through the always construct
+Info (10041): Verilog HDL or VHDL info at clockmyself.v(474): inferred latch for "qout_1[6]"
+Info (10041): Verilog HDL or VHDL info at clockmyself.v(474): inferred latch for "qout_1[5]"
+Info (10041): Verilog HDL or VHDL info at clockmyself.v(474): inferred latch for "qout_1[4]"
+Info (10041): Verilog HDL or VHDL info at clockmyself.v(474): inferred latch for "qout_1[3]"
+Info (10041): Verilog HDL or VHDL info at clockmyself.v(474): inferred latch for "qout_1[2]"
+Info (10041): Verilog HDL or VHDL info at clockmyself.v(474): inferred latch for "qout_1[1]"
+Info (10041): Verilog HDL or VHDL info at clockmyself.v(474): inferred latch for "qout_1[0]"
+Warning (10235): Verilog HDL Always Construct warning at clockmyself.v(512): variable "set_alarm" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at clockmyself.v(528): variable "set_alarm" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10240): Verilog HDL Always Construct warning at clockmyself.v(510): inferring latch(es) for variable "qout_2", which holds its previous value in one or more paths through the always construct
+Info (10041): Verilog HDL or VHDL info at clockmyself.v(512): inferred latch for "qout_2[6]"
+Info (10041): Verilog HDL or VHDL info at clockmyself.v(512): inferred latch for "qout_2[5]"
+Info (10041): Verilog HDL or VHDL info at clockmyself.v(512): inferred latch for "qout_2[4]"
+Info (10041): Verilog HDL or VHDL info at clockmyself.v(512): inferred latch for "qout_2[3]"
+Info (10041): Verilog HDL or VHDL info at clockmyself.v(512): inferred latch for "qout_2[2]"
+Info (10041): Verilog HDL or VHDL info at clockmyself.v(512): inferred latch for "qout_2[1]"
+Info (10041): Verilog HDL or VHDL info at clockmyself.v(512): inferred latch for "qout_2[0]"
+Warning (10235): Verilog HDL Always Construct warning at clockmyself.v(548): variable "set_alarm" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at clockmyself.v(564): variable "set_alarm" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at clockmyself.v(566): variable "alarm_minL" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10240): Verilog HDL Always Construct warning at clockmyself.v(546): inferring latch(es) for variable "qout_3", which holds its previous value in one or more paths through the always construct
+Info (10041): Verilog HDL or VHDL info at clockmyself.v(548): inferred latch for "qout_3[6]"
+Info (10041): Verilog HDL or VHDL info at clockmyself.v(548): inferred latch for "qout_3[5]"
+Info (10041): Verilog HDL or VHDL info at clockmyself.v(548): inferred latch for "qout_3[4]"
+Info (10041): Verilog HDL or VHDL info at clockmyself.v(548): inferred latch for "qout_3[3]"
+Info (10041): Verilog HDL or VHDL info at clockmyself.v(548): inferred latch for "qout_3[2]"
+Info (10041): Verilog HDL or VHDL info at clockmyself.v(548): inferred latch for "qout_3[1]"
+Info (10041): Verilog HDL or VHDL info at clockmyself.v(548): inferred latch for "qout_3[0]"
+Warning (10235): Verilog HDL Always Construct warning at clockmyself.v(584): variable "set_alarm" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at clockmyself.v(600): variable "set_alarm" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at clockmyself.v(602): variable "alarm_minH" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10240): Verilog HDL Always Construct warning at clockmyself.v(582): inferring latch(es) for variable "qout_4", which holds its previous value in one or more paths through the always construct
+Info (10041): Verilog HDL or VHDL info at clockmyself.v(584): inferred latch for "qout_4[6]"
+Info (10041): Verilog HDL or VHDL info at clockmyself.v(584): inferred latch for "qout_4[5]"
+Info (10041): Verilog HDL or VHDL info at clockmyself.v(584): inferred latch for "qout_4[4]"
+Info (10041): Verilog HDL or VHDL info at clockmyself.v(584): inferred latch for "qout_4[3]"
+Info (10041): Verilog HDL or VHDL info at clockmyself.v(584): inferred latch for "qout_4[2]"
+Info (10041): Verilog HDL or VHDL info at clockmyself.v(584): inferred latch for "qout_4[1]"
+Info (10041): Verilog HDL or VHDL info at clockmyself.v(584): inferred latch for "qout_4[0]"
+Warning (10235): Verilog HDL Always Construct warning at clockmyself.v(620): variable "set_alarm" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at clockmyself.v(636): variable "set_alarm" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at clockmyself.v(638): variable "alarm_hourL" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10240): Verilog HDL Always Construct warning at clockmyself.v(618): inferring latch(es) for variable "qout_5", which holds its previous value in one or more paths through the always construct
+Info (10041): Verilog HDL or VHDL info at clockmyself.v(620): inferred latch for "qout_5[6]"
+Info (10041): Verilog HDL or VHDL info at clockmyself.v(620): inferred latch for "qout_5[5]"
+Info (10041): Verilog HDL or VHDL info at clockmyself.v(620): inferred latch for "qout_5[4]"
+Info (10041): Verilog HDL or VHDL info at clockmyself.v(620): inferred latch for "qout_5[3]"
+Info (10041): Verilog HDL or VHDL info at clockmyself.v(620): inferred latch for "qout_5[2]"
+Info (10041): Verilog HDL or VHDL info at clockmyself.v(620): inferred latch for "qout_5[1]"
+Info (10041): Verilog HDL or VHDL info at clockmyself.v(620): inferred latch for "qout_5[0]"
+Warning (10235): Verilog HDL Always Construct warning at clockmyself.v(656): variable "set_alarm" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at clockmyself.v(672): variable "set_alarm" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at clockmyself.v(674): variable "alarm_hourH" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10240): Verilog HDL Always Construct warning at clockmyself.v(654): inferring latch(es) for variable "qout_6", which holds its previous value in one or more paths through the always construct
+Info (10041): Verilog HDL or VHDL info at clockmyself.v(656): inferred latch for "qout_6[6]"
+Info (10041): Verilog HDL or VHDL info at clockmyself.v(656): inferred latch for "qout_6[5]"
+Info (10041): Verilog HDL or VHDL info at clockmyself.v(656): inferred latch for "qout_6[4]"
+Info (10041): Verilog HDL or VHDL info at clockmyself.v(656): inferred latch for "qout_6[3]"
+Info (10041): Verilog HDL or VHDL info at clockmyself.v(656): inferred latch for "qout_6[2]"
+Info (10041): Verilog HDL or VHDL info at clockmyself.v(656): inferred latch for "qout_6[1]"
+Info (10041): Verilog HDL or VHDL info at clockmyself.v(656): inferred latch for "qout_6[0]"
+Info: Duplicate registers merged to single register
+    Info: Duplicate register "Data_Buf[6]" merged to single register "Data_Buf[7]"
+    Info: Duplicate register "Data_Buf[2]" merged to single register "Data_Buf[7]"
+    Info: Duplicate register "Data_Buf[0]" merged to single register "Data_Buf[7]"
+    Info: Duplicate register "Data_Buf[3]" merged to single register "Data_Buf[4]"
+    Info: Duplicate register "Data_Buf[1]" merged to single register "Data_Buf[4]"
+    Info: Duplicate register "Data_Buf[10]" merged to single register "Data_Buf[14]"
+    Info: Duplicate register "Data_Buf[8]" merged to single register "Data_Buf[14]"
+    Info: Duplicate register "Data_Buf[11]" merged to single register "Data_Buf[12]"
+    Info: Duplicate register "Data_Buf[9]" merged to single register "Data_Buf[12]"
+    Info: Duplicate register "Data_Buf[18]" merged to single register "Data_Buf[22]"
+    Info: Duplicate register "Data_Buf[16]" merged to single register "Data_Buf[22]"
+    Info: Duplicate register "Data_Buf[17]" merged to single register "Data_Buf[20]"
+    Info: Duplicate register "Data_Buf[24]" merged to single register "Data_Buf[30]"
+    Info: Duplicate register "Data_Buf[25]" merged to single register "Data_Buf[28]"
+Warning: Reduced register "Data_Buf[7]" with stuck data_in port to stuck value GND
+Warning: Reduced register "Data_Buf[15]" with stuck data_in port to stuck value GND
+Warning: Reduced register "Data_Buf[23]" with stuck data_in port to stuck value GND
+Warning: Reduced register "Data_Buf[31]" with stuck data_in port to stuck value GND
+Warning: Reduced register "Data_Buf[39]" with stuck data_in port to stuck value GND
+Warning: Reduced register "Data_Buf[47]" with stuck data_in port to stuck value GND
+Warning: Reduced register "Data_Buf[55]" with stuck data_in port to stuck value GND
+Warning: Reduced register "Data_Buf[63]" with stuck data_in port to stuck value GND
+Warning: Reduced register "Data_Buf[71]" with stuck data_in port to stuck value GND
+Warning: Reduced register "Data_Buf[79]" with stuck data_in port to stuck value GND
+Warning: Reduced register "Data_Buf[87]" with stuck data_in port to stuck value GND
+Warning: Reduced register "Data_Buf[95]" with stuck data_in port to stuck value GND
+Warning: Reduced register "Data_Buf[103]" with stuck data_in port to stuck value GND
+Warning: Reduced register "Data_Buf[111]" with stuck data_in port to stuck value GND
+Warning: Reduced register "Data_Buf[119]" with stuck data_in port to stuck value GND
+Warning: Reduced register "Data_Buf[127]" with stuck data_in port to stuck value GND
+Info: State machine "|clockmyself|state" contains 7 states
+Info: Selected Auto state machine encoding method for state machine "|clockmyself|state"
+Info: Encoding result for state machine "|clockmyself|state"
+    Info: Completed encoding using 7 state bits
+        Info: Encoded state bit "state.Write_Data_Second"
+        Info: Encoded state bit "state.Set_Disp_Mode"
+        Info: Encoded state bit "state.Disp_On"
+        Info: Encoded state bit "state.Shift_Down"
+        Info: Encoded state bit "state.Write_Addr"
+        Info: Encoded state bit "state.Write_Data_First"
+        Info: Encoded state bit "state.Clear_Lcd"
+    Info: State "|clockmyself|state.Clear_Lcd" uses code string "0000000"
+    Info: State "|clockmyself|state.Write_Data_First" uses code string "0000011"
+    Info: State "|clockmyself|state.Write_Addr" uses code string "0000101"
+    Info: State "|clockmyself|state.Shift_Down" uses code string "0001001"
+    Info: State "|clockmyself|state.Disp_On" uses code string "0010001"
+    Info: State "|clockmyself|state.Set_Disp_Mode" uses code string "0100001"
+    Info: State "|clockmyself|state.Write_Data_Second" uses code string "1000001"
+Info: Duplicate registers merged to single register
+    Info: Duplicate register "q[0]" merged to single register "div_cnt[0]"
+    Info: Duplicate register "q[1]" merged to single register "div_cnt[1]"
+Info: Duplicate registers merged to single register
+    Info: Duplicate register "q[2]" merged to single register "div_cnt[2]"
+    Info: Duplicate register "q[3]" merged to single register "div_cnt[3]"
+    Info: Duplicate register "q[4]" merged to single register "div_cnt[4]"
+    Info: Duplicate register "q[5]" merged to single register "div_cnt[5]"
+Warning: Latch minH[0] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal set_mod
+Warning: Latch minH[1] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal set_mod
+Warning: Latch minH[2] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal set_mod
+Warning: Latch minH[3] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal set_mod
+Warning: Latch minL[0] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal set_mod
+Warning: Latch minL[1] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal set_mod
+Warning: Latch minL[2] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal set_mod
+Warning: Latch minL[3] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal set_mod
+Warning: Latch hourL[0] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal set_mod
+Warning: Latch hourL[1] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal set_mod
+Warning: Latch hourL[2] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal set_mod
+Warning: Latch hourL[3] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal set_mod
+Warning: Latch hourH[0] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal set_mod
+Warning: Latch hourH[1] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal set_mod
+Warning: Latch hourH[2] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal set_mod
+Warning: Latch hourH[3] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal set_mod
+Warning: Latch secL[0] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal set_mod
+Warning: Latch secL[1] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal set_mod
+Warning: Latch secL[2] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal set_mod
+Warning: Latch secL[3] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal set_mod
+Warning: Latch secH[0] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal set_mod
+Warning: Latch secH[1] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal set_mod
+Warning: Latch secH[2] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal set_mod
+Warning: Latch secH[3] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal set_mod
+Info: Registers with preset signals will power-up high
+Info: DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Warning: Output pins are stuck at VCC or GND
+    Warning: Pin "LCD_ON" stuck at VCC
+    Warning: Pin "RW" stuck at GND
+Info: Implemented 779 device resources after synthesis - the final resource count might be different
+    Info: Implemented 7 input pins
+    Info: Implemented 66 output pins
+    Info: Implemented 706 logic cells
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 132 warnings
+    Info: Processing ended: Thu Oct 01 16:05:11 2020
+    Info: Elapsed time: 00:00:02
+
+

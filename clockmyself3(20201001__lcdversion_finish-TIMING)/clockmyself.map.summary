@@ -1,0 +1,12 @@
+Analysis & Synthesis Status : Successful - Thu Oct 01 16:05:11 2020
+Quartus II Version : 6.0 Build 178 04/27/2006 SJ Web Edition
+Revision Name : clockmyself
+Top-level Entity Name : clockmyself
+Family : Cyclone II
+Total logic elements : 696
+Total registers : 294
+Total pins : 73
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0
